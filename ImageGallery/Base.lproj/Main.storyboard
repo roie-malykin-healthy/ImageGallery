@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Unv-jZ-iDf">
     <device id="ipad12_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -8,10 +8,25 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Gallery Picker Controller-->
+        <scene sceneID="Vap-mv-aTW">
+            <objects>
+                <viewController id="hCM-Eu-ZUS" customClass="GalleryPickerController" customModule="ImageGallery" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DCp-kD-p9H">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="z0s-Ol-c0v"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v9H-W2-K5M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-702" y="129"/>
+        </scene>
+        <!--Image Collection Gallery Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ImageGallery" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ImageCollectionGalleryController" customModule="ImageGallery" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -31,21 +46,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Aem-4r-W2E">
-                                <rect key="frame" x="0.0" y="24" width="1051" height="1307"/>
-                                <viewLayoutGuide key="contentLayoutGuide" id="04f-VG-uMb"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="W7Y-Mn-bSv"/>
-                            </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vBq-DC-2HY">
+                                <rect key="frame" x="0.0" y="24" width="1024" height="1322"/>
+                                <subviews>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M2l-ta-DHi">
+                                        <rect key="frame" x="4" y="0.0" width="1016" height="1322"/>
+                                        <viewLayoutGuide key="contentLayoutGuide" id="sdR-i9-tHZ"/>
+                                        <viewLayoutGuide key="frameLayoutGuide" id="pty-NL-W5I"/>
+                                    </scrollView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" priority="250" constant="984" id="4n3-ah-cJR"/>
+                                    <constraint firstAttribute="trailing" secondItem="M2l-ta-DHi" secondAttribute="trailing" id="AKO-8Q-ePg"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1322" id="MBD-rc-Slg"/>
+                                    <constraint firstItem="M2l-ta-DHi" firstAttribute="top" secondItem="vBq-DC-2HY" secondAttribute="top" id="Sva-Qa-AVX"/>
+                                    <constraint firstAttribute="bottom" secondItem="M2l-ta-DHi" secondAttribute="bottom" id="V9r-eW-iHm"/>
+                                    <constraint firstItem="M2l-ta-DHi" firstAttribute="leading" secondItem="vBq-DC-2HY" secondAttribute="leading" id="WeW-mc-FKb"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1nz-KC-e6c"/>
                         <color key="backgroundColor" systemColor="systemBrownColor"/>
                         <constraints>
-                            <constraint firstItem="Aem-4r-W2E" firstAttribute="top" secondItem="1nz-KC-e6c" secondAttribute="top" id="BXp-7o-MaJ"/>
-                            <constraint firstAttribute="trailing" secondItem="Aem-4r-W2E" secondAttribute="trailing" id="ECc-1U-wGK"/>
-                            <constraint firstItem="Aem-4r-W2E" firstAttribute="leading" secondItem="1nz-KC-e6c" secondAttribute="leading" id="R9d-LF-Ejs"/>
-                            <constraint firstItem="1nz-KC-e6c" firstAttribute="bottom" secondItem="Aem-4r-W2E" secondAttribute="bottom" id="uun-1v-45X"/>
+                            <constraint firstItem="vBq-DC-2HY" firstAttribute="leading" secondItem="1nz-KC-e6c" secondAttribute="leading" id="0GK-zL-ghq"/>
+                            <constraint firstItem="vBq-DC-2HY" firstAttribute="bottom" secondItem="1nz-KC-e6c" secondAttribute="bottom" id="Gzx-UO-ZGa"/>
+                            <constraint firstItem="1nz-KC-e6c" firstAttribute="trailing" secondItem="vBq-DC-2HY" secondAttribute="trailing" id="I9G-Wp-4vB"/>
+                            <constraint firstItem="vBq-DC-2HY" firstAttribute="top" secondItem="1nz-KC-e6c" secondAttribute="top" id="NFW-Mt-HQn"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="scrollView" destination="M2l-ta-DHi" id="ozL-m6-fqp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cbs-e7-zm6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
