@@ -1,5 +1,5 @@
 //
-//  ImageCollectionGalleryController.swift
+//  GalleryPickerController.swift
 //  ImageGallery
 //
 //  Created by Roie Malykin on 25/05/2022.
@@ -7,11 +7,16 @@
 
 import UIKit
 
-final class ImageCollectionGalleryController: UIViewController {
+final class GalleryPickerController: UIViewController {
+   // MARK: - Attributes
+    @IBOutlet weak var galleryTable: UITableView!
+    private var dataSource: UITableViewDataSource?
+    private var delegate: UITableViewDelegate?
+   // MARK: - TableView methods
+    
+   // MARK: - Life cycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     /*
     // MARK: - Navigation

@@ -11,6 +11,9 @@
 		BC53142E283D29D9009E1B3E /* ImageDisplayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC53142D283D29D9009E1B3E /* ImageDisplayController.swift */; };
 		BC531430283DEDEC009E1B3E /* ImageCollectionGalleryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC53142F283DEDEC009E1B3E /* ImageCollectionGalleryController.swift */; };
 		BC531432283DF1D1009E1B3E /* GalleryPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC531431283DF1D1009E1B3E /* GalleryPickerController.swift */; };
+		BC531437283E1216009E1B3E /* GalleryTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC531436283E1216009E1B3E /* GalleryTable.swift */; };
+		BC53143B283E1B1D009E1B3E /* ImageCollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC53143A283E1B1D009E1B3E /* ImageCollectionModel.swift */; };
+		BC531443283F656C009E1B3E /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC531442283F656C009E1B3E /* ImageCell.swift */; };
 		BCDB1241283A818600EF884C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDB1240283A818600EF884C /* AppDelegate.swift */; };
 		BCDB1243283A818600EF884C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDB1242283A818600EF884C /* SceneDelegate.swift */; };
 		BCDB1248283A818600EF884C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCDB1246283A818600EF884C /* Main.storyboard */; };
@@ -23,6 +26,9 @@
 		BC53142D283D29D9009E1B3E /* ImageDisplayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDisplayController.swift; sourceTree = "<group>"; };
 		BC53142F283DEDEC009E1B3E /* ImageCollectionGalleryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionGalleryController.swift; sourceTree = "<group>"; };
 		BC531431283DF1D1009E1B3E /* GalleryPickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryPickerController.swift; sourceTree = "<group>"; };
+		BC531436283E1216009E1B3E /* GalleryTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryTable.swift; sourceTree = "<group>"; };
+		BC53143A283E1B1D009E1B3E /* ImageCollectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionModel.swift; sourceTree = "<group>"; };
+		BC531442283F656C009E1B3E /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		BCDB123D283A818600EF884C /* ImageGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCDB1240283A818600EF884C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCDB1242283A818600EF884C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +49,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC531433283E1136009E1B3E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BC531431283DF1D1009E1B3E /* GalleryPickerController.swift */,
+				BC53142D283D29D9009E1B3E /* ImageDisplayController.swift */,
+				BC53142F283DEDEC009E1B3E /* ImageCollectionGalleryController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		BC531435283E11AD009E1B3E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BC531436283E1216009E1B3E /* GalleryTable.swift */,
+				BC53143A283E1B1D009E1B3E /* ImageCollectionModel.swift */,
+				BC531442283F656C009E1B3E /* ImageCell.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		BCDB1234283A818600EF884C = {
 			isa = PBXGroup;
 			children = (
@@ -62,13 +88,12 @@
 		BCDB123F283A818600EF884C /* ImageGallery */ = {
 			isa = PBXGroup;
 			children = (
+				BC531435283E11AD009E1B3E /* Models */,
+				BC531433283E1136009E1B3E /* Controllers */,
 				BC53142B283D24F2009E1B3E /* URL.swift */,
 				BCDB1240283A818600EF884C /* AppDelegate.swift */,
 				BCDB1242283A818600EF884C /* SceneDelegate.swift */,
-				BC53142F283DEDEC009E1B3E /* ImageCollectionGalleryController.swift */,
 				BCDB1246283A818600EF884C /* Main.storyboard */,
-				BC531431283DF1D1009E1B3E /* GalleryPickerController.swift */,
-				BC53142D283D29D9009E1B3E /* ImageDisplayController.swift */,
 				BCDB1249283A818800EF884C /* Assets.xcassets */,
 				BCDB124B283A818800EF884C /* LaunchScreen.storyboard */,
 				BCDB124E283A818800EF884C /* Info.plist */,
@@ -171,8 +196,11 @@
 			files = (
 				BC53142C283D24F2009E1B3E /* URL.swift in Sources */,
 				BC53142E283D29D9009E1B3E /* ImageDisplayController.swift in Sources */,
+				BC531443283F656C009E1B3E /* ImageCell.swift in Sources */,
 				BCDB1241283A818600EF884C /* AppDelegate.swift in Sources */,
 				BC531430283DEDEC009E1B3E /* ImageCollectionGalleryController.swift in Sources */,
+				BC531437283E1216009E1B3E /* GalleryTable.swift in Sources */,
+				BC53143B283E1B1D009E1B3E /* ImageCollectionModel.swift in Sources */,
 				BC531432283DF1D1009E1B3E /* GalleryPickerController.swift in Sources */,
 				BCDB1243283A818600EF884C /* SceneDelegate.swift in Sources */,
 			);
