@@ -7,8 +7,9 @@
 
 import UIKit
 
-class ImageGalleryTableViewController: UITableViewController {
-
+final class ImageGalleryTableViewController: UITableViewController {
+    // MARK: - Attributes
+    private var dataModel = ImageGalleryTableViewData()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,29 +19,22 @@ class ImageGalleryTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 2
+        return dataModel.numberOfSections
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return dataModel .numOfRowsInSection(chosenSection: section)
     }
-
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "IGTableCell", for: indexPath)
+        cell.textLabel?.text = dataModel.titleFromIndexPath(ip: indexPath)
         return cell
     }
-    */
-
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
