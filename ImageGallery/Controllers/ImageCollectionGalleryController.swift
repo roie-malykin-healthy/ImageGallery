@@ -8,8 +8,7 @@
 import UIKit
 
 final class ImageCollectionGalleryController: UIViewController {
-   
-    @IBOutlet weak var ImageCollection: UICollectionView!
+    @IBOutlet private weak var imageCollection: UICollectionView!
     
     var dataSource: UICollectionViewDataSource?
     var delegate: UICollectionViewDelegate?

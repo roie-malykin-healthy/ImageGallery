@@ -161,7 +161,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="ImageCollection" destination="RVu-Pt-OKH" id="bPi-Pn-q7S"/>
+                        <outlet property="imageCollection" destination="RVu-Pt-OKH" id="bPi-Pn-q7S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

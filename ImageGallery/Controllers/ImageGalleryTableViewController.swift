@@ -12,6 +12,9 @@ final class ImageGalleryTableViewController: UITableViewController {
     private var dataModel = ImageGalleryTableViewData()
     override func viewDidLoad() {
         super.viewDidLoad()
+        let galNames = ["as", "df"]
+        let rdgNames = ["yy", "nn"]
+        dataModel = ImageGalleryTableViewData(galleryNames: galNames, deletedGalleryNames: rdgNames)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -79,5 +82,4 @@ final class ImageGalleryTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
