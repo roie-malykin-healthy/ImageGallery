@@ -4,23 +4,23 @@
 //
 //  Created by Roie Malykin on 25/05/2022.
 //
-
+/// This class is my own version to implement UITableViewController and obscure the data from the controller 
 import UIKit
 
-final class GalleryPickerController: UIViewController {
+final class GalleryPickerController: UITableViewController {
    // MARK: - Attributes
     private var tableData = GaleryTableData()
     @IBOutlet private weak var galleryTable: UITableView!
     private var dataSource: UITableViewDataSource?
     private var delegate: UITableViewDelegate?
-   // MARK: - TableView methods
-    private func numberOfSections(in tableView: UITableView) -> Int {
+    // MARK: - TableView methods
+    internal override func numberOfSections(in tableView: UITableView) -> Int {
         return tableData.numberOfSections
     }
-    private func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    internal override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tableData.tableView(tableView, numberOfRowsInSection: section)
     }
-    private func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    internal override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = galleryTable .dequeueReusableCell(withIdentifier: "GalleryTableCell", for: indexPath)
         // Configure the cell
         cell.textLabel?.text = tableData.titleFromIndexPath(indexPath: indexPath)
