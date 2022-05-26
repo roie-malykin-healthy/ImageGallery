@@ -28,15 +28,31 @@ final class GaleryTableData: UITableViewDataSource {
     private func moveGallerytoRecentlyDeleted(galleryName: String, indexOfGallery: Int) {
             assert(galleryName == galleryNames[indexOfGallery], "Gallery name dosent match ")
     }
-    
+    // MARK: - Methods for controller
+    func titleFromIndexPath(indexPath: IndexPath) -> String {
+        assert(indexPath.section < 2 ,"GaleryTableData.titleFromIndexPath(\(indexPath)) , the selected section does not exist! given section : \(indexPath.section)")
+        
+        
+        switch indexPath.section {
+        case 0:
+            assert(indexPath.row < galleryNames.count ,"GaleryTableData.titleFromIndexPath(\(indexPath)) , the selected gallery name does not exist! given row : \(indexPath.row)")
+            return galleryNames[indexPath.row]
+        case 1:
+            assert(indexPath.row < deletedGalleryNames.count ,"GaleryTableData.titleFromIndexPath(\(indexPath)) , the selected deleted gallery name does not exist in recently ! given row : \(indexPath.row)")
+            return deletedGalleryNames[indexPath.row]
+        default:
+            return "Bug text!"
+        }
+        
+    }
     
     // MARK: - Inherited methods from UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
-        case 1:
+        case 0:
             return galleryNames.count
-        case 2:
+        case 1:
             return deletedGalleryNames.count
         default:
             return 0

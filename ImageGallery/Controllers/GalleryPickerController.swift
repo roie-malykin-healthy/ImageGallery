@@ -21,8 +21,9 @@ final class GalleryPickerController: UIViewController {
         return tableData.tableView(tableView, numberOfRowsInSection: section)
     }
     private func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = galleryTable .dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
+        let cell = galleryTable .dequeueReusableCell(withIdentifier: "GalleryTableCell", for: indexPath)
+        // Configure the cell
+        cell.textLabel?.text = tableData.titleFromIndexPath(indexPath: indexPath)
         return cell
     }
     
