@@ -15,14 +15,14 @@ final class ImageCollectionModel : UICollectionViewDataSource {
         self.name = name
         self.width = width
     }
-    // MARK: -
+    // MARK: - Methods
     func changeGalleryName(newName: String) {
         name = newName
     }
     func addImageCellToGallery(newImageCell: ImageCell) {
         images.append(newImageCell)
     }
-    
+    // MARK: - UICollectionViewDataSource methods
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 1
     }

@@ -6,18 +6,22 @@
 //
 import Foundation
 import UIKit
-final class GalleryTable: UITableViewDataSource {
+final class GaleryTableData: UITableViewDataSource {
     
     // MARK: - Attributes
-    private var galleryNames: [String]
-    private var deletedGalleryNames: [String]
-   
-    // MARK: - Methods
+    private(set) var galleryNames: [String]
+    private(set) var deletedGalleryNames: [String]
+    let numberOfSections: Int = 2
+    // MARK: - Initilizers
+    init() {
+        self.galleryNames = [String]()
+        self.deletedGalleryNames = [String]()
+    }
     init( galleryNames: [String] ,deletedGalleryNames: [String] ) {
         self.galleryNames = galleryNames
         self.deletedGalleryNames = deletedGalleryNames
     }
-    
+    // MARK: - Methods
     private func addGalery(galleryName: String, indexOfGallery: Int) {
         galleryNames.append(galleryName)
     }
@@ -29,7 +33,14 @@ final class GalleryTable: UITableViewDataSource {
     // MARK: - Inherited methods from UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        switch section {
+        case 1:
+            return galleryNames.count
+        case 2:
+            return deletedGalleryNames.count
+        default:
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

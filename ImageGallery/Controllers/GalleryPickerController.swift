@@ -9,15 +9,28 @@ import UIKit
 
 final class GalleryPickerController: UIViewController {
    // MARK: - Attributes
-    @IBOutlet weak var galleryTable: UITableView!
+    private var tableData = GaleryTableData()
+    @IBOutlet private weak var galleryTable: UITableView!
     private var dataSource: UITableViewDataSource?
     private var delegate: UITableViewDelegate?
    // MARK: - TableView methods
+    private func numberOfSections(in tableView: UITableView) -> Int {
+        return tableData.numberOfSections
+    }
+    private func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tableData.tableView(tableView, numberOfRowsInSection: section)
+    }
+    private func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = galleryTable .dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+
+        return cell
+    }
     
    // MARK: - Life cycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
     /*
     // MARK: - Navigation
 
