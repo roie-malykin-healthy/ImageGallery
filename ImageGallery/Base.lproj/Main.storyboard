@@ -104,7 +104,13 @@
                             <outlet property="delegate" destination="XVU-sk-pZZ" id="4zI-Z8-agF"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="WP7-1n-pF5"/>
+                    <navigationItem key="navigationItem" id="WP7-1n-pF5">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="wyu-ae-cDG">
+                            <connections>
+                                <action selector="addNewGallery:" destination="XVU-sk-pZZ" id="tZB-l5-HR2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S8D-5J-Zg5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -115,7 +121,7 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ImageCollectionGalleryController" customModule="ImageGallery" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="1045" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1045.5" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vyb-Hp-uHy">

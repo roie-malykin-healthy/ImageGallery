@@ -22,13 +22,30 @@ final class ImageGalleryTableViewData {
         self.deletedGalleryNames = deletedGalleryNames
     }
     // MARK: - Methods
-    private func addGalery(galleryName: String, indexOfGallery: Int) {
-        galleryNames.append(galleryName)
+    
+    private func moveGalleryIntoRecentlyDeleted(indexPath: IndexPath) {
+        let galleryToMove = galleryNames.remove(at: indexPath.row)
+        deletedGalleryNames += [ galleryToMove.madeUnique(withRespectTo: deletedGalleryNames)]
     }
-    private func moveGallerytoRecentlyDeleted(galleryName: String, indexOfGallery: Int) {
-            assert(galleryName == galleryNames[indexOfGallery], "Gallery name dosent match ")
+    private func completlyRemoveGallery(indexPath: IndexPath) {
     }
+    
     // MARK: - Methods for controller
+    func addNewGalery() {
+        galleryNames += ["Untiteled".madeUnique(withRespectTo: galleryNames)]
+    }
+
+    func deleteGallery(indexPath: IndexPath) {
+    switch indexPath.section {
+    case 0 :
+        moveGalleryIntoRecentlyDeleted(indexPath: indexPath)
+    case 1 :
+        completlyRemoveGallery(indexPath: indexPath)
+    default:
+        print("no section here")
+        }
+    }
+
     func numOfRowsInSection(chosenSection: Int) -> Int {
         switch chosenSection {
         case 0 :
