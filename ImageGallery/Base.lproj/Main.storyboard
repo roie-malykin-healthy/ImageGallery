@@ -72,10 +72,10 @@
             </objects>
             <point key="canvasLocation" x="-1605" y="576"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Image Gallery Table View Controller-->
         <scene sceneID="Zhf-uO-4g3">
             <objects>
-                <tableViewController id="XVU-sk-pZZ" sceneMemberID="viewController">
+                <tableViewController id="XVU-sk-pZZ" customClass="ImageGalleryTableViewController" customModule="ImageGallery" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="1OB-re-9l0">
                         <rect key="frame" x="0.0" y="0.0" width="420" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
