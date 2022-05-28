@@ -187,6 +187,17 @@
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M2l-ta-DHi">
                                         <rect key="frame" x="0.0" y="0.0" width="1358" height="972"/>
+                                        <subviews>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="hYv-JL-3Hn">
+                                                <rect key="frame" x="627" y="454" width="104" height="65"/>
+                                            </activityIndicatorView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="pty-NL-W5I" firstAttribute="bottom" secondItem="hYv-JL-3Hn" secondAttribute="bottom" constant="461" id="3Fr-fX-IqT"/>
+                                            <constraint firstItem="hYv-JL-3Hn" firstAttribute="top" secondItem="pty-NL-W5I" secondAttribute="top" constant="454" id="6V7-dl-1jr"/>
+                                            <constraint firstItem="pty-NL-W5I" firstAttribute="trailing" secondItem="hYv-JL-3Hn" secondAttribute="trailing" constant="635" id="EI5-mQ-cwN"/>
+                                            <constraint firstItem="hYv-JL-3Hn" firstAttribute="leading" secondItem="pty-NL-W5I" secondAttribute="leading" constant="627" id="efg-pQ-vcg"/>
+                                        </constraints>
                                         <viewLayoutGuide key="contentLayoutGuide" id="sdR-i9-tHZ"/>
                                         <viewLayoutGuide key="frameLayoutGuide" id="pty-NL-W5I"/>
                                     </scrollView>
@@ -212,6 +223,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="loadingSpinner" destination="hYv-JL-3Hn" id="ivD-Gd-wCq"/>
                         <outlet property="scrollView" destination="M2l-ta-DHi" id="ozL-m6-fqp"/>
                     </connections>
                 </viewController>

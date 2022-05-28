@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BC2740492842841200BD43E2 /* ImageDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2740482842841200BD43E2 /* ImageDisplayView.swift */; };
 		BC53142C283D24F2009E1B3E /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC53142B283D24F2009E1B3E /* URL.swift */; };
 		BC53142E283D29D9009E1B3E /* ImageDisplayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC53142D283D29D9009E1B3E /* ImageDisplayController.swift */; };
 		BC531430283DEDEC009E1B3E /* ImageCollectionGalleryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC53142F283DEDEC009E1B3E /* ImageCollectionGalleryController.swift */; };
@@ -25,7 +24,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BC2740482842841200BD43E2 /* ImageDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDisplayView.swift; sourceTree = "<group>"; };
 		BC53142B283D24F2009E1B3E /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		BC53142D283D29D9009E1B3E /* ImageDisplayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDisplayController.swift; sourceTree = "<group>"; };
 		BC53142F283DEDEC009E1B3E /* ImageCollectionGalleryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionGalleryController.swift; sourceTree = "<group>"; };
@@ -58,7 +56,6 @@
 		BC274047284282BA00BD43E2 /* MyViews */ = {
 			isa = PBXGroup;
 			children = (
-				BC2740482842841200BD43E2 /* ImageDisplayView.swift */,
 			);
 			path = MyViews;
 			sourceTree = "<group>";
@@ -220,7 +217,6 @@
 				BC531437283E1216009E1B3E /* GaleryTableData.swift in Sources */,
 				BC53143B283E1B1D009E1B3E /* ImageCollectionModel.swift in Sources */,
 				BC531432283DF1D1009E1B3E /* GalleryPickerController.swift in Sources */,
-				BC2740492842841200BD43E2 /* ImageDisplayView.swift in Sources */,
 				BCDB1243283A818600EF884C /* SceneDelegate.swift in Sources */,
 				BCC793F8283FF9F400075067 /* ImageGalleryTableViewData.swift in Sources */,
 			);

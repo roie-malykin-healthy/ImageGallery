@@ -3,21 +3,30 @@
 //  ImageGallery
 //
 //  Created by Roie Malykin on 24/05/2022.
-//
 import UIKit
+/// This controller Displays the selected Image from galery via a scrollView ,Based on CS193 Stanford course code.
 final class ImageDisplayController: UIViewController, UIScrollViewDelegate {
     // MARK: - Attributes
     private var imageURL: URL? {
         didSet {
-            imageView.image
+            image = nil
+            if view.window != nil {
+               fetchImage()
+            }
         }
     }
     private var imageView = UIImageView()
     
     private var image: UIImage? {
-            imageView.image
+        get { imageView.image }
+        set {
+            imageView.image = newValue
+            imageView.sizeToFit()
+            scrollView?.contentSize = imageView.frame.size
+        }
     }
-    // MARK: - ScrollView outlets
+    @IBOutlet private weak var loadingSpinner: UIActivityIndicatorView!
+    // MARK: - ScrollView outlet
     @IBOutlet private weak var scrollView: UIScrollView! {
         didSet {
             scrollView.maximumZoomScale = 1.2
@@ -28,16 +37,30 @@ final class ImageDisplayController: UIViewController, UIScrollViewDelegate {
     }
     private func fetchImage() {
         if let url = imageURL {
-            let urlContents = try? Data(contentsOf: url) // Cause data contentsOf throws
-            if let imageData = urlContents {
-                imageView.image = UIImage(data: imageData)
+            loadingSpinner.startAnimating()
+            DispatchQueue.global(qos: .userInitiated).async {[weak self] in
+                let urlContents = try? Data(contentsOf: url) // Try because Data(contentsOf:) throws!
+                DispatchQueue.main.async {
+                    self!.loadingSpinner.stopAnimating()
+                    self!.loadingSpinner.isHidden = true
+                    if let imageData = urlContents, self?.imageURL == url {
+                        self?.image = UIImage(data: imageData)
+                    }
+                }
             }
         }
     }
+
     // MARK: - View life cycle funcs
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if imageView.image == nil {
+           fetchImage()
+        }
     }
     /*
     // MARK: - Navigation
