@@ -186,7 +186,7 @@
                                 <rect key="frame" x="0.0" y="24" width="1366" height="980"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M2l-ta-DHi">
-                                        <rect key="frame" x="4" y="0.0" width="1016" height="1322"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1358" height="972"/>
                                         <viewLayoutGuide key="contentLayoutGuide" id="sdR-i9-tHZ"/>
                                         <viewLayoutGuide key="frameLayoutGuide" id="pty-NL-W5I"/>
                                     </scrollView>
@@ -217,7 +217,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cbs-e7-zm6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="680" y="128"/>
+            <point key="canvasLocation" x="679.94143484626647" y="127.73437499999999"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="li9-eO-28x">
