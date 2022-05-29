@@ -7,7 +7,9 @@
 import UIKit
 final class ImageGalleryTableViewController: UITableViewController, UITextFieldDelegate {
     // MARK: - Attributes
-    private var dataModel = ImageGalleryTableViewData()
+    //private var dataModel = ImageGalleryTableViewData()
+    private var activeGalleries = [Gallery]()
+    private var recentlyDeletedGalleris = [Gallery]()
     private var selectedGallery: Gallery?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,7 +18,7 @@ final class ImageGalleryTableViewController: UITableViewController, UITextFieldD
 //        let rdgNames = ["yy", "nn"]
 //        dataModel = ImageGalleryTableViewData(galleryNames: galNames, deletedGalleryNames: rdgNames)
         // Register new my custom cells
-        tableView.register(MyTableViewCell.self, forCellReuseIdentifier: "MyCell")
+        // tableView.register(MyTableViewCell.self, forCellReuseIdentifier: "MyCell")
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -27,12 +29,20 @@ final class ImageGalleryTableViewController: UITableViewController, UITextFieldD
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return dataModel.numberOfSections
+        // return dataModel.numberOfSections
+        return 2
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return dataModel .numOfRowsInSection(chosenSection: section)
+        switch section {
+        case 0 :
+            return activeGalleries.count
+        case 1 :
+            return recentlyDeletedGalleris.count
+        default:
+            return 0
+        }
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Custom cell currently not displaying text properly , dont forget to set it back on story board
@@ -49,7 +59,7 @@ final class ImageGalleryTableViewController: UITableViewController, UITextFieldD
         // tableView.deselectRow(at: indexPath, animated: true)
         if indexPath.section == 0 { // Active Galleries
             selectedGallery = dataModel.activeGalleries[indexPath.row]
-            performSegue(withIdentifier: "SShowThisGallery", sender: self)
+            performSegue(withIdentifier: "ShowThisGallery", sender: self)
         }
     }
     @IBAction private func createAndAddNewGallery(_ sender: UIBarButtonItem) {

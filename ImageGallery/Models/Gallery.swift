@@ -9,8 +9,8 @@ import Foundation
 /// This container class holds an image gallery
 final class Gallery {
     // MARK: - Attributes
-    private(set) var name: String
-    private(set) var imgaes: [URL]
+    private var name: String
+    private var imgaes: [URL]
     init(name: String) {
         self.name = name
         self.imgaes = [URL]()
@@ -21,5 +21,8 @@ final class Gallery {
     }
     func changeGalleryName(newName: String) {
         name = newName
+    }
+    func galleryName() -> String {
+        name
     }
 }

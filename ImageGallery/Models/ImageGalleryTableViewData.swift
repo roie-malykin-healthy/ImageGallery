@@ -32,7 +32,7 @@ final class ImageGalleryTableViewData {
     // MARK: - Methods for controller
     func createAndAddNewGallery(name: String) {
         let newGallery = Gallery(name: name)
-        activeGalleries.append(newGallery)
+        addGallery(gal: newGallery)
     }
     func addGallery(gal: Gallery) {
         activeGalleries.append(gal)
@@ -63,10 +63,10 @@ final class ImageGalleryTableViewData {
         switch ip.section {
         case 0:
             assert(ip.row < activeGalleries.count, "GaleryTableData.titleFromIndexPath(\(ip)) , the selected gallery name does not exist! given row : \(ip.row)")
-            return activeGalleries[ip.row].name
+            return activeGalleries[ip.row].galleryName()
         case 1:
             assert(ip.row < recentlyDeletedGalleris.count, "GaleryTableData.titleFromIndexPath(\(ip)) , the selected deleted gallery name does not exist in recently ! given row : \(ip.row)")
-            return recentlyDeletedGalleris[ip.row].name
+            return recentlyDeletedGalleris[ip.row].galleryName()
         default:
             return "Bug text!"
         }
