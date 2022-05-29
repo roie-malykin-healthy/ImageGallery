@@ -4,18 +4,18 @@
 //
 //  Created by Roie Malykin on 26/05/2022.
 //
-
 import UIKit
-
 final class ImageGalleryTableViewController: UITableViewController {
     // MARK: - Attributes
     private var dataModel = ImageGalleryTableViewData()
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Data for demo
         let galNames = ["as", "df"]
         let rdgNames = ["yy", "nn"]
         dataModel = ImageGalleryTableViewData(galleryNames: galNames, deletedGalleryNames: rdgNames)
-
+        // Register new my custom cells
+        tableView.register(MyTableViewCell.self, forCellReuseIdentifier: "MyCell")
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -34,9 +34,13 @@ final class ImageGalleryTableViewController: UITableViewController {
         return dataModel .numOfRowsInSection(chosenSection: section)
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "IGTableCell", for: indexPath)
-        cell.textLabel?.text = dataModel.titleFromIndexPath(ip: indexPath)
-        return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath) as? MyTableViewCell
+        cell!.textField.text = dataModel.titleFromIndexPath(ip: indexPath)
+        return cell!
+    }
+    /// This method deselct my tableCell ater aditing
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     @IBAction private func addNewGallery(_ sender: UIBarButtonItem) {
         dataModel.addNewGalery()
