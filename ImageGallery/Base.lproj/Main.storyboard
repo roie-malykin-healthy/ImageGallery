@@ -173,8 +173,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="collectionView" destination="RVu-Pt-OKH" id="bPi-Pn-q7S"/>
                         <outlet property="dropZoneView" destination="Vyb-Hp-uHy" id="wqL-xe-oBQ"/>
-                        <outlet property="imageCollection" destination="RVu-Pt-OKH" id="bPi-Pn-q7S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

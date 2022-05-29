@@ -37,6 +37,16 @@ final class ImageGalleryTableViewController: UITableViewController, UITextFieldD
             return 0
         }
     }
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0:
+            return "My Galleries"
+        default:
+            return "Recently Deleted"
+        }
+        
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Custom cell currently not displaying text properly , dont forget to set it back on story board
 //        let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath) as? MyTableViewCell

@@ -6,20 +6,19 @@
 //
 //
  import UIKit
- final class ImageCollectionGalleryController: UIViewController, UICollectionViewDropDelegate {
+final class ImageCollectionGalleryController: UIViewController, UICollectionViewDropDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDragDelegate  {
     // MARK: - Attributes
-     var gallery: Gallery! {
-         didSet {
-             galleryData = ImageCollectionModel(gallery: gallery)
-         }
-    }
-    private var galleryData: ImageCollectionModel?
+     var gallery: Gallery!
+    
+    // private var galleryData: ImageCollectionModel?
     @IBOutlet private weak var dropZoneView: UIView!
-    @IBOutlet private weak var imageCollection: UICollectionView!
+    @IBOutlet private weak var collectionView: UICollectionView!
     var dataSource: UICollectionViewDataSource?
     var delegate: UICollectionViewDelegate?
-
     // MARK: Drag interactions
+    func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
+        <#code#>
+    }
     func collectionView(_ collectionView: UICollectionView, performDropWith coordinator: UICollectionViewDropCoordinator) {
         print("place holder print")
     }
