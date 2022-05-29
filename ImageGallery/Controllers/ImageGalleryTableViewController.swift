@@ -5,7 +5,7 @@
 //  Created by Roie Malykin on 26/05/2022.
 //
 import UIKit
-final class ImageGalleryTableViewController: UITableViewController {
+final class ImageGalleryTableViewController: UITableViewController, UITextFieldDelegate {
     // MARK: - Attributes
     private var dataModel = ImageGalleryTableViewData()
     override func viewDidLoad() {
@@ -34,8 +34,13 @@ final class ImageGalleryTableViewController: UITableViewController {
         return dataModel .numOfRowsInSection(chosenSection: section)
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath) as? MyTableViewCell
-        cell!.textField.text = dataModel.titleFromIndexPath(ip: indexPath)
+        // Custom cell currently not displaying text properly , dont forget to set it back on story board
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath) as? MyTableViewCell
+//        // Enbling TextField to get the proper title
+//        // cell!.textField.isEnabled = true
+//        cell!.textField.text! = dataModel.titleFromIndexPath(ip: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TableCell", for: indexPath) as? UITableViewCell
+        cell!.textLabel?.text = dataModel.titleFromIndexPath(ip: indexPath)
         return cell!
     }
     /// This method deselct my tableCell ater aditing

@@ -8,15 +8,12 @@
 import UIKit
 /// This class is a custom table view cell that holds a editable TextField for my ImageGalleryViewController
 /// based on this video https://www.youtube.com/watch?v=fbjrGIXB_m8
-final class MyTableViewCell: UITableViewCell {
+final class MyTableViewCell: UITableViewCell, UITextFieldDelegate {
     // MARK: - Attributes
-    let textField: UITextField
-//    = {
-//        let myTf = TextField()
-//        myTf.translatesAutoresizingMaskIntoConstraints = false
-//        myTf.placeholder = "edit me"
-//        return myTf
-//    }()
+    var textField: UITextField {
+        didSet { textField.delegate = self
+        }
+    }
     // MARK: - Init
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         self.textField = TextField()
@@ -37,7 +34,7 @@ final class MyTableViewCell: UITableViewCell {
     
    final class TextField: UITextField {
         override var intrinsicContentSize: CGSize {
-            .init(width: 0, height: 44) // Need to make theese constants or compute a proper size
+            .init(width: 80, height: 44) // Need to make theese constants or compute a proper size
         }
         
         override func textRect(forBounds bounds: CGRect) -> CGRect {
@@ -47,5 +44,17 @@ final class MyTableViewCell: UITableViewCell {
         override func editingRect(forBounds bounds: CGRect) -> CGRect {
             bounds.insetBy(dx: 24, dy: 0)
         }
+    }
+  // MARK: - TextFieldDelegate
+    func textFieldDidBeginEditing(textField: UITextField!) {    // delegate method
+    }
+
+    func textFieldShouldEndEditing(textField: UITextField!) -> Bool {  // delegate method
+        return false
+    }
+
+    func textFieldShouldReturn(textField: UITextField!) -> Bool {   // delegate method
+      textField.resignFirstResponder()
+        return true
     }
 }
