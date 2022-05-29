@@ -44,7 +44,6 @@ final class ImageGalleryTableViewController: UITableViewController, UITextFieldD
         default:
             return "Recently Deleted"
         }
-        
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

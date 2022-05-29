@@ -10,19 +10,25 @@ import Foundation
 final class Gallery {
     // MARK: - Attributes
     private var name: String
-    private var imgaes: [URL]
+    private(set) var images: [URL]
+    private(set) var ratio: [Float]
     init(name: String) {
         self.name = name
-        self.imgaes = [URL]()
+        self.images = [URL]()
+        self.ratio = [Float]()
     }
     // MARK: - Functions
     func addImage(url: URL) {
-        imgaes.append(url)
+        images.append(url)
+        // Calc ratio
     }
     func changeGalleryName(newName: String) {
         name = newName
     }
     func galleryName() -> String {
         name
+    }
+    func imageAndRatioTuple(at index: Int) -> (image: URL, ratio: Float) {
+        (image: images[index], ratio: ratio[index])
     }
 }
