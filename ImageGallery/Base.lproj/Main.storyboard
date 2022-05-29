@@ -97,6 +97,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="showDetail" identifier="ShowThisGallery" id="Pav-KL-Cdx"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -176,7 +179,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-703" y="922"/>
+            <point key="canvasLocation" x="-15" y="-1305"/>
         </scene>
         <!--Image Display Controller-->
         <scene sceneID="Zla-Tg-7rT">
@@ -272,6 +275,9 @@
             <point key="canvasLocation" x="-703" y="-619"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Pav-KL-Cdx"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

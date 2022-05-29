@@ -7,16 +7,18 @@
 import UIKit
 final class ImageCollectionModel {
     // MARK: - Attributes
-    private var name: String = "MyDefalutName"
+    private var gallery: Gallery
     private var width: Float = 100.0
     private var images = [ImageCell]()
-    init(name: String, width: Float) {
-        self.name = name
-        self.width = width
+    init(gallery: Gallery) {
+        self.gallery = gallery
+//        for url in gallery.imgaes {
+//            let image
+//        }
     }
     // MARK: - Methods
     func changeGalleryName(newName: String) {
-        name = newName
+        gallery.changeGalleryName(newName: newName)
     }
     func addImageCellToGallery(newImageCell: ImageCell) {
         images.append(newImageCell)

@@ -8,6 +8,12 @@
  import UIKit
  final class ImageCollectionGalleryController: UIViewController, UICollectionViewDropDelegate {
     // MARK: - Attributes
+     var gallery: Gallery? {
+         didSet {
+             galleryData = ImageCollectionModel(gallery: gallery!)
+         }
+    }
+    private var galleryData: ImageCollectionModel?
     @IBOutlet private weak var dropZoneView: UIView!
     @IBOutlet private weak var imageCollection: UICollectionView!
     var dataSource: UICollectionViewDataSource?
@@ -38,12 +44,7 @@
     var imageFetcher: ImageFetcher!
 
     func dropInteraction(_ interaction: UIDropInteraction, performDrop session: UIDropSession) {
- //        imageFetcher = ImageFetcher() { (url, image) in
- //            DispatchQueue.main.async {
- //                // self.emojiArtBackgroundImage = image
- //                print("just a placeholder print")
- //            }
-        }
+    }
 
  //        session.loadObjects(ofClass: NSURL.self) { nsurls in
  //            if let url = nsurls.first as? URL {

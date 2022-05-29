@@ -8,12 +8,13 @@ import UIKit
 final class ImageGalleryTableViewController: UITableViewController, UITextFieldDelegate {
     // MARK: - Attributes
     private var dataModel = ImageGalleryTableViewData()
+    private var selectedGallery: Gallery?
     override func viewDidLoad() {
         super.viewDidLoad()
         // Data for demo
-        let galNames = ["as", "df"]
-        let rdgNames = ["yy", "nn"]
-        dataModel = ImageGalleryTableViewData(galleryNames: galNames, deletedGalleryNames: rdgNames)
+//        let galNames = ["as", "df"]
+//        let rdgNames = ["yy", "nn"]
+//        dataModel = ImageGalleryTableViewData(galleryNames: galNames, deletedGalleryNames: rdgNames)
         // Register new my custom cells
         tableView.register(MyTableViewCell.self, forCellReuseIdentifier: "MyCell")
         // Uncomment the following line to preserve selection between presentations
@@ -37,18 +38,22 @@ final class ImageGalleryTableViewController: UITableViewController, UITextFieldD
         // Custom cell currently not displaying text properly , dont forget to set it back on story board
 //        let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath) as? MyTableViewCell
 //        // Enbling TextField to get the proper title
-//        // cell!.textField.isEnabled = true
+//        // cell!.textField.setEditing(true, animation: true)
 //        cell!.textField.text! = dataModel.titleFromIndexPath(ip: indexPath)
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableCell", for: indexPath) as? UITableViewCell
         cell!.textLabel?.text = dataModel.titleFromIndexPath(ip: indexPath)
         return cell!
     }
-    /// This method deselct my tableCell ater aditing
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+        // tableView.deselectRow(at: indexPath, animated: true)
+        if indexPath.section == 0 { // Active Galleries
+            selectedGallery = dataModel.activeGalleries[indexPath.row]
+            performSegue(withIdentifier: "SShowThisGallery", sender: self)
+        }
     }
-    @IBAction private func addNewGallery(_ sender: UIBarButtonItem) {
-        dataModel.addNewGalery()
+    @IBAction private func createAndAddNewGallery(_ sender: UIBarButtonItem) {
+        dataModel.createAndAddNewGallery(name: "Untitled")
         tableView.reloadData()
     }
     /*
@@ -84,17 +89,16 @@ final class ImageGalleryTableViewController: UITableViewController, UITextFieldD
         return true
     }
     */
-
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if let destination = segue.destination as? ImageCollectionGalleryController {
+            if segue.identifier == "ShowThisGallery" {
+                destination.gallery = selectedGallery!
+            }
+        }
     }
-    */
-    
     // MARK: - "Life Cycle"
     
     override func viewWillLayoutSubviews() {
