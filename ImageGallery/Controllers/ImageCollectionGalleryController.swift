@@ -8,9 +8,9 @@
  import UIKit
  final class ImageCollectionGalleryController: UIViewController, UICollectionViewDropDelegate {
     // MARK: - Attributes
-     var gallery: Gallery? {
+     var gallery: Gallery! {
          didSet {
-             galleryData = ImageCollectionModel(gallery: gallery!)
+             galleryData = ImageCollectionModel(gallery: gallery)
          }
     }
     private var galleryData: ImageCollectionModel?

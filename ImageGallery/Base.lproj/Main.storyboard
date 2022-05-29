@@ -110,7 +110,7 @@
                     <navigationItem key="navigationItem" id="WP7-1n-pF5">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="wyu-ae-cDG">
                             <connections>
-                                <action selector="addNewGallery:" destination="XVU-sk-pZZ" id="tZB-l5-HR2"/>
+                                <action selector="createAndAddNewGallery:" destination="XVU-sk-pZZ" id="BsX-Ja-PZE"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -276,7 +276,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Pav-KL-Cdx"/>
+        <segue reference="nHn-c9-xqV"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
