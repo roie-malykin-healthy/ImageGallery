@@ -167,6 +167,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="dropZoneView" destination="Vyb-Hp-uHy" id="wqL-xe-oBQ"/>
                         <outlet property="imageCollection" destination="RVu-Pt-OKH" id="bPi-Pn-q7S"/>
                     </connections>
                 </viewController>
