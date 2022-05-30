@@ -127,7 +127,7 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ImageCollectionGalleryController" customModule="ImageGallery" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="1045" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1045.5" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vyb-Hp-uHy">
@@ -161,6 +161,7 @@
                                                 <connections>
                                                     <outlet property="cellView" destination="emK-yz-YTr" id="G1t-Os-Bbe"/>
                                                     <outlet property="loadingSpinner" destination="lig-tb-Nfd" id="qCd-du-jd7"/>
+                                                    <segue destination="Unv-jZ-iDf" kind="showDetail" identifier="PresentChosenImage" id="goX-B9-Tzf"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
@@ -191,24 +192,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-15.373352855051243" y="-1305.46875"/>
+            <point key="canvasLocation" x="694" y="-611"/>
         </scene>
         <!--Image Display Controller-->
         <scene sceneID="Zla-Tg-7rT">
             <objects>
                 <viewController id="Unv-jZ-iDf" customClass="ImageDisplayController" customModule="ImageGallery" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TEG-fa-4uy">
-                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1045.5" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vBq-DC-2HY">
-                                <rect key="frame" x="0.0" y="24" width="1366" height="980"/>
+                                <rect key="frame" x="0.0" y="74" width="1045.5" height="930"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M2l-ta-DHi">
                                         <rect key="frame" x="0.0" y="0.0" width="1358" height="972"/>
                                         <subviews>
                                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="hYv-JL-3Hn">
-                                                <rect key="frame" x="627" y="454" width="104" height="65"/>
+                                                <rect key="frame" x="627" y="454" width="20" height="15"/>
                                             </activityIndicatorView>
                                         </subviews>
                                         <constraints>
@@ -288,7 +289,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="nHn-c9-xqV"/>
+        <segue reference="Pav-KL-Cdx"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">

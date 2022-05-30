@@ -10,8 +10,8 @@ import Foundation
 final class Gallery {
     // MARK: - Attributes
     private var name: String
-    private(set) var images: [URL]
-    private(set) var ratio: [Float]
+    var images: [URL]
+    var ratio: [Float]
     init(name: String) {
         self.name = name
         self.images = [URL]()
@@ -30,5 +30,9 @@ final class Gallery {
     }
     func imageAndRatioTuple(at index: Int) -> (image: URL, ratio: Float) {
         (image: images[index], ratio: ratio[index])
+    }
+    func removeImageData(at index: Int) {
+        images.remove(at: index)
+        ratio.remove(at: index)
     }
 }

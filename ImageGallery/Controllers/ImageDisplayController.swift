@@ -7,7 +7,7 @@ import UIKit
 /// This controller Displays the selected Image from galery via a scrollView ,Based on CS193 Stanford course code.
 final class ImageDisplayController: UIViewController, UIScrollViewDelegate {
     // MARK: - Attributes
-    private var imageURL: URL? {
+    var imageURL: URL? {
         didSet {
             image = nil
             if view.window != nil {
